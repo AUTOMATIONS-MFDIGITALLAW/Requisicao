@@ -8,7 +8,7 @@ from function.read_dataframe import copiar
 
 
 def buscar_pasta(value):
-    time.sleep(10)
+    time.sleep(2)
     searchimage('Requisicao', 'Requisicao encontrado!', 'Requisicao não encontrado')
     time.sleep(4)
     searchimage('Abrir_Requisicao', 'Abrir_Requisicao Encontrado!', 'Abrir_Requisicao não encontrado!')
@@ -17,4 +17,5 @@ def buscar_pasta(value):
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(1)
     pyautogui.hotkey('enter')
-    time.sleep(5)
+    time.sleep(2)
+    searchimage('Honorario', 'Honorario encontrado!', 'Honorario não encontrado')

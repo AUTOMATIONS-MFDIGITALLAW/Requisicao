@@ -70,14 +70,14 @@ def main(page: ft.Page):
 
     def sair(e):
         log.info("Automação fechada")
-        os._exit(0)  # Encerra o processo imediatamente
+        os._exit(0)
 
 
     page.add(
         ft.Column(
             [
                 ft.Text(
-                    "Bem-vindo à Automação do PROCON",
+                    "Bem-vindo à Automação da Requisição",
                     size=30,
                     weight="bold",
                     font_family="Arial Black",
