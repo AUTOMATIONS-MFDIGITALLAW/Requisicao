@@ -15,7 +15,7 @@ def cadastrar(row):
     time.sleep(3)
     searchimage('Adverso', 'Adverso Encontrado!', 'Adverso não encontrado!')
     copiar(row["PARTES"])
-    time.sleep(2)
+    time.sleep(3)
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(4)
     click_and_fill('clique', 'clique encontrado', 'clique não encontrada')

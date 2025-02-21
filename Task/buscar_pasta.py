@@ -19,3 +19,5 @@ def buscar_pasta(value):
     pyautogui.hotkey('enter')
     time.sleep(2)
     searchimage('Honorario', 'Honorario encontrado!', 'Honorario não encontrado')
+    time.sleep(2)
+    searchimage('Adicionar', 'Adicionar Encontrado!', 'Adicionar não encontrado!')
