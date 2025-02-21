@@ -9,13 +9,18 @@ from function.read_dataframe import copiar, copiar2
 
 
 def cadastrar(row):
+    time.sleep(5)
+    searchimage('Pasta', 'Pasta Encontrado!', 'Pasta não encontrado!')
+    pyautogui.write('1')
+    pyautogui.press("backspace", presses=9)
     copiar(row["PASTA"])
     time.sleep(2)
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(3)
     searchimage('Adverso', 'Adverso Encontrado!', 'Adverso não encontrado!')
+    time.sleep(1)
     copiar(row["PARTES"])
-    time.sleep(3)
+    time.sleep(5)
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(4)
     click_and_fill('clique', 'clique encontrado', 'clique não encontrada')
