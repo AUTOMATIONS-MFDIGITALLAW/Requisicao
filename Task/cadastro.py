@@ -35,7 +35,7 @@ def cadastrar(row):
     time.sleep(4)
     time.sleep(4)
     pyautogui.hotkey('ctrl', 'v')
-    time.sleep(5)
+    time.sleep(10)
     searchimage('Parcela', 'Parcela Encontrado!', 'Parcela não encontrado!')
     time.sleep(1)
     pyautogui.write('1')

@@ -26,7 +26,7 @@ task_path = base_path / "Task"
 
 
 def main(page: ft.Page):
-    page.title = "Automação de Requisição"
+    page.title = "Automação da Eduardinha"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     log.info('Automação iniciada')
