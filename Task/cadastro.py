@@ -28,7 +28,7 @@ def cadastrar(row):
     time.sleep(5)
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(5)
-    click_and_fill('clique', 'clique encontrado', 'clique não encontrada')
+    click_and_fill('cliqueadv', 'cliqueadv encontrado', 'cliqueadv não encontrada')
     time.sleep(1)
     searchimage('TipoHonorario', 'TipoHonorario Encontrado!', 'TipoHonorario não encontrado!')
     copiar(row["ATO"])

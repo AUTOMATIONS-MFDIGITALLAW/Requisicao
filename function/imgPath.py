@@ -28,5 +28,6 @@ IMG = {
 POSITION = {
     'cookie': (1767, 972),
     'clique': (851, 409),
-    'clique2': (660,399)
+    'clique2': (660,399),
+    'cliqueadv': (830, 417)
 }
