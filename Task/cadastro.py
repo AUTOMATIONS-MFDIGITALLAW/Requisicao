@@ -2,6 +2,7 @@ import time
 
 import pyautogui
 import pyperclip
+import keyboard as key
 
 from function.click_and_fill import click_and_fill
 from function.imgfuction import searchimage
@@ -41,9 +42,12 @@ def cadastrar(row):
     pyautogui.write('1')
     time.sleep(1)
     searchimage('ValorEspecie', 'ValorEspecie specie Encontrado!', 'ValorEspecie specie não encontrado!')
-    copiar(row["VALOR"])
     time.sleep(1)
-    pyautogui.hotkey('ctrl', 'v')
+    valor = "{:.2f}".format(float(row["VALOR"])).replace('.', ',')
+    key.write(valor)
+    #copiar(valor)
+    #key.write(valor)
+    #pyautogui.hotkey('ctrl', 'v')
     time.sleep(1)
     searchimage('DataVencimento', 'DataVencimento specie Encontrado!', 'DataVencimento specie não encontrado!')
     copiar2(row["DATA"])
@@ -56,6 +60,14 @@ def cadastrar(row):
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(5)
     searchimage('Salvar', 'Salvar specie Encontrado!', 'Salvar specie não encontrado!')
+    if searchimage('atencao', 'bloco de atenção encontrado', 'não achado bloco de atenção'):
+        searchimage('ok','ok clicado prosseguidno','ok não econtrado')
+
+    #if tal imagem:
+        #clica no ok
+        #cancelar
+        #volta pra honorario
+        #volta automação do começo seguindo pra proxima linha.
 
 
 

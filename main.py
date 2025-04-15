@@ -32,8 +32,6 @@ def main(page: ft.Page):
     log.info('Automação iniciada')
 
     df = None
-
-    # Campos de input para login e senha
     username_input = ft.TextField(label="Usuário", width=300)
     password_input = ft.TextField(label="Senha", password=True, width=300)
 
@@ -74,20 +72,35 @@ def main(page: ft.Page):
         log.info("Automação fechada")
         os._exit(0)
 
-    page.add(
-        ft.Column(
+    background = ft.Container(
+        image_src=str(img_path / "fundo.jpeg"),
+        image_fit=ft.ImageFit.COVER,
+        expand=True,
+        content=ft.Row(
             [
-                ft.Text("Bem-vindo à Automação da Eduardinha", size=30, weight="bold", font_family="Arial Black"),
-                username_input,  # Campo para inserir o usuário
-                password_input,  # Campo para inserir a senha (oculta)
-                ft.ElevatedButton("Importar Planilha", on_click=importar),
-                ft.ElevatedButton("Iniciar Automação", on_click=iniciar_automacao),
-                ft.ElevatedButton("Sair", on_click=sair),
+                ft.Container(
+                    bgcolor=ft.colors.with_opacity(0, ft.colors.BLACK),
+                    border_radius=20,
+                    padding=30,
+                    content=ft.Column(
+                        [
+                            ft.Text("Bem-vindo à Automação da Eduardinha", size=30, weight="bold",
+                                    font_family="Arial Black", color=ft.colors.BLACK),
+                            ft.ElevatedButton("Carregar Planilha", on_click=importar),
+                            ft.ElevatedButton("Iniciar Automação", on_click=iniciar_automacao),
+                            ft.ElevatedButton("Sair", on_click=sair),
+                        ],
+                        alignment=ft.MainAxisAlignment.CENTER,
+                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    ),
+                )
             ],
             alignment=ft.MainAxisAlignment.CENTER,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
         )
     )
+
+    page.add(background)
 
 
 ft.app(target=main)
