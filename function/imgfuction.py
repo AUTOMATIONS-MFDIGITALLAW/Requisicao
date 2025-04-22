@@ -1,4 +1,6 @@
 from logging import exception
+from time import sleep
+
 import pyautogui as pya
 import time
 from function.imgPath import IMG
@@ -23,6 +25,8 @@ def search_image_time(image_alias: object, description: object,excep: object):
     for i in range(5):
         try:
             image_dimension = pya.locateOnScreen(IMG[image_alias], confidence=0.9)
+            sleep(2)
+            log.info('aguardando..')
             if image_dimension:
                 pya.click(image_dimension)
                 log.success(description)

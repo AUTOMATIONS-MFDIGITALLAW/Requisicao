@@ -23,8 +23,10 @@ IMG = {
     'DataVencimento': get_resource_path('img/DataVencimento.png'),
     'Nota': get_resource_path('img/Nota.png'),
     'Salvar': get_resource_path('img/Salvar.png'),
-    'atencao': get_resource_path('img/atencao.jpeg'),
+    'atencao': get_resource_path('img/atencao.png'),
     'ok': get_resource_path('img/ok.png'),
+    'HR': get_resource_path('img/HR.png'),
+    'dadosgerais': get_resource_path('img/dadosgerais.png'),
 }
 
 POSITION = {

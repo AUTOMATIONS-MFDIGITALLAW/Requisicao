@@ -1,11 +1,13 @@
 import time
+from time import sleep
 
 import pyautogui
 import pyperclip
 import keyboard as key
+from function.logger import log
 
 from function.click_and_fill import click_and_fill
-from function.imgfuction import searchimage
+from function.imgfuction import searchimage, search_image_time
 from function.read_dataframe import copiar, copiar2
 
 
@@ -60,14 +62,16 @@ def cadastrar(row):
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(5)
     searchimage('Salvar', 'Salvar specie Encontrado!', 'Salvar specie não encontrado!')
-    if searchimage('atencao', 'bloco de atenção encontrado', 'não achado bloco de atenção'):
+    if search_image_time('atencao', 'bloco de atenção encontrado', 'não achado bloco de atenção'):
         searchimage('ok','ok clicado prosseguidno','ok não econtrado')
+        sleep(2)
+        searchimage('HR','HR clicado prosseguidno','HR não econtrado')
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press("backspace")
+        searchimage('dadosgerais','dadosgerais clicado prosseguidno','dadosgerais não econtrado')
+    else:
+        log.info('indo para o proximo cadastro')
 
-    #if tal imagem:
-        #clica no ok
-        #cancelar
-        #volta pra honorario
-        #volta automação do começo seguindo pra proxima linha.
 
 
 

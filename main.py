@@ -32,8 +32,8 @@ def main(page: ft.Page):
     log.info('Automação iniciada')
 
     df = None
-    username_input = ft.TextField(label="Usuário", width=300)
-    password_input = ft.TextField(label="Senha", password=True, width=300)
+    username_input = ft.TextField(label="Usuário", width=300, color=ft.colors.BLACK)
+    password_input = ft.TextField(label="Senha", password=True, width=300, color=ft.colors.BLACK)
 
     def importar(e):
         nonlocal df
@@ -82,14 +82,18 @@ def main(page: ft.Page):
                     bgcolor=ft.colors.with_opacity(0, ft.colors.BLACK),
                     border_radius=20,
                     padding=30,
+
                     content=ft.Column(
-                        [
-                            ft.Text("Bem-vindo à Automação da Eduardinha", size=30, weight="bold",
-                                    font_family="Arial Black", color=ft.colors.BLACK),
-                            ft.ElevatedButton("Carregar Planilha", on_click=importar),
-                            ft.ElevatedButton("Iniciar Automação", on_click=iniciar_automacao),
-                            ft.ElevatedButton("Sair", on_click=sair),
-                        ],
+            [
+                        ft.Text("Bem-vindo à Automação da Eduardinha", size=30, weight="bold",
+                                font_family="Arial Black", color=ft.colors.BLACK),
+                        username_input,
+                        password_input,
+                        ft.ElevatedButton("Carregar Planilha", on_click=importar),
+                        ft.ElevatedButton("Iniciar Automação", on_click=iniciar_automacao),
+                        ft.ElevatedButton("Sair", on_click=sair),
+                    ],
+
                         alignment=ft.MainAxisAlignment.CENTER,
                         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                     ),
